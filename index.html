@@ -15,7 +15,7 @@
         <h3 class="mlogo">MENTOR</h3>
  
          <nav class="mnav d-flex align-items-center" id="mynavbar">
-       <a class="togglericon" onclick= "navcol()" style="font-size:18px; text-decoration:none;">&#9776;</a> 
+       <a class="togglericon" id ="navbarToggler" onclick= "navcol()" style="font-size:18px; text-decoration:none;">&#9776;</a> 
           <ul>
              <li><a> Home </a></li>
              <li><a> About </a></li>
@@ -34,11 +34,23 @@
 <script>
   function navcol() {
     var x = document.getElementById("mynavbar");
+
+    const toggleButton = document.getElementById("navbarToggler")
+
    if(x.className === "mnav") {
+
+    toggleButton.innerHTML = "X"
+
+    document.body.style.overflow ="hidden"
      
      x.className += " mobile";
    }
     else {
+
+      toggleButton.innerHTML = "&#9776;"
+
+      document.body.style.overflow ="auto"
+
       x.className = "mnav";
     }
   }          
